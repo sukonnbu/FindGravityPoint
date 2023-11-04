@@ -4,7 +4,7 @@ import math
 
 # 삼각형의 무게중심
 def get_triangle_gravity(arr: np.ndarray):
-    return np.array([np.sum(arr[:,0])/3, np.sum(arr[:,1])/3])
+    return np.array([np.sum(arr[:, 0])/3, np.sum(arr[:, 1])/3])
 
 
 def get_polygon_gravity(nth_arr: np.ndarray):
@@ -26,7 +26,7 @@ def get_polygon_gravity(nth_arr: np.ndarray):
         return solve_equation(solution_1, solution_2)
 
 
-#반시계방향으로 정렬 -> 삼각 분할 위해
+# 반시계방향으로 정렬 -> 삼각 분할 위해
 def sort_unclockwise(arr: np.ndarray):
     center_x, center_y = 0.0, 0.0
     for point in arr:

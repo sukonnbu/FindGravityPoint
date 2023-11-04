@@ -4,31 +4,7 @@ import math
 
 # 삼각형의 무게중심
 def get_triangle_gravity(arr: np.ndarray):
-    point = np.array([np.sum(arr[:,0])/3, np.sum(arr[:,1])/3])
-    print("Point:", np.array([np.sum(arr[:,0])/3, np.sum(arr[:,1])/3]))
-    return point
-
-# 사각형의 무게중심
-# 점선택 알고리즘 -> 무게중심 두 번 구함
-def get_square_gravity(square_arr: np.ndarray):
-    points_arr = sort_unclockwise(square_arr)
-    print("Sorted:", points_arr)
-
-    x_1, y_1 = get_triangle_gravity(np.delete(points_arr, 3, axis=0))
-    x_2, y_2 = get_triangle_gravity(np.delete(points_arr, 1, axis=0))
-    print(np.array([[x_1, y_1], [x_2, y_2]]))
-    # 두 점 지나는 직선(일차방정식)
-    solution_1 = np.array([y_2 - y_1, x_1 - x_2, y_2 * x_1 - x_2 * y_1])
-    print(f"Sol1: {solution_1[0]} X {solution_1[1]} Y = {solution_1[2]}")
-
-
-    x_3, y_3 = get_triangle_gravity(np.delete(points_arr, 2, axis=0))
-    x_4, y_4 = get_triangle_gravity(np.delete(points_arr, 0, axis=0))
-
-    solution_2 = np.array([y_4 - y_3, x_3 - x_4, x_3 * y_4 - x_4 * y_3])
-    print(f"Sol2: {solution_2[0]} X {solution_2[1]} Y = {solution_2[2]}")
-
-    return solve_equation(solution_1, solution_2)
+    return np.array([np.sum(arr[:,0])/3, np.sum(arr[:,1])/3])
 
 
 def get_polygon_gravity(nth_arr: np.ndarray):

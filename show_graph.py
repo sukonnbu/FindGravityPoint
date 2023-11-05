@@ -7,7 +7,7 @@ from tkinter import ttk
 
 def show_graph():
     dots = np.random.rand(int(point_num.get()), 2)
-    dots = find_point.sort_unclockwise(dots)
+    dots = find_point.sort_counterclockwise(dots)
     gravity_point = find_point.get_polygon_gravity(dots)
     dots = np.append(dots, dots[0])
     dots = dots.reshape((int(dots.size/2), 2))

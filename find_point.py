@@ -1,17 +1,20 @@
+import decimal
+
 import numpy as np
 import math
 
 
 # 삼각형의 무게중심
 def get_triangle_gravity(arr: np.ndarray):
-    return np.array([np.sum(arr[:, 0])/3, np.sum(arr[:, 1])/3])
+    return np.sum(arr[:, 0])/3, np.sum(arr[:, 1])/3
 
 
 def get_polygon_gravity(nth_arr: np.ndarray):
     if nth_arr.shape[0] == 3:
         return get_triangle_gravity(nth_arr)
     else:
-        points_arr = sort_unclockwise(nth_arr)
+        # points_arr = sort_unclockwise(nth_arr)
+        points_arr = nth_arr
 
         x_1, y_1 = get_triangle_gravity(points_arr[0:3])
         x_2, y_2 = get_polygon_gravity(np.delete(points_arr, 1, axis=0))
@@ -28,24 +31,18 @@ def get_polygon_gravity(nth_arr: np.ndarray):
 
 # 반시계방향으로 정렬 -> 삼각 분할 위해
 def sort_unclockwise(arr: np.ndarray):
-    center_x, center_y = 0.0, 0.0
-    for point in arr:
-        center_x += point[0]
-        center_y += point[1]
-    center = np.array([center_x / arr.size * 2, center_y / arr.size * 2])
-
+    center = np.average(arr[:,0]), np.average(arr[:,1])
     key_arr = np.array([])
-    sorted_arr = np.array([])
 
     for point in arr:
-        key = math.atan2(point[1] - center[1], point[0] - center[0])
-        key_arr = np.append(key_arr, key)
-    index_arr = np.argsort(key_arr, axis=0)
+        key = math.atan2(decimal.Decimal(point[1] - center[1]), decimal.Decimal(point[0] - center[0]))
+        key_arr = np.append(key_arr, [key, point[0], point[1]])
+    key_arr = key_arr.reshape((int(key_arr.size/3), 3))
+    key_arr = np.sort(key_arr, axis=0)
 
-    for i in range(0, index_arr.size):
-        sorted_arr = np.append(sorted_arr, arr[np.where(index_arr == i)])
+    sorted_arr = key_arr[:,1:]
 
-    return sorted_arr.reshape((int(arr.size/2), 2))
+    return sorted_arr
 
 
 '''

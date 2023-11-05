@@ -12,7 +12,7 @@ def get_polygon_gravity(nth_arr: np.ndarray):
     if nth_arr.shape[0] == 3:
         return get_triangle_gravity(nth_arr)
     else:
-        # points_arr = sort_unclockwise(nth_arr)
+        points_arr = sort_counterclockwise(nth_arr)
         points_arr = nth_arr
 
         x_1, y_1 = get_triangle_gravity(points_arr[0:3])
@@ -29,7 +29,7 @@ def get_polygon_gravity(nth_arr: np.ndarray):
 
 
 # 반시계방향으로 정렬 -> 삼각 분할 위해
-def sort_unclockwise(arr: np.ndarray):
+def sort_counterclockwise(arr: np.ndarray):
     center = np.average(arr[:,0]), np.average(arr[:,1])
     key_arr = np.array([])
 

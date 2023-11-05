@@ -1,5 +1,4 @@
 import decimal
-
 import numpy as np
 import math
 

@@ -24,7 +24,7 @@ window.title("Find Gravity Point")
 window.resizable(False, False)
 
 # 서 북 동 남
-mainframe = ttk.Frame(window, padding="20 20 20 20")
+mainframe = ttk.Frame(window, padding="170 20 170 50")
 mainframe.grid(column=0, row=0)
 window.columnconfigure(0, weight=1)
 window.rowconfigure(0, weight=1)

@@ -44,10 +44,10 @@
 #### _Credit_
 | 기획/연출                   | 김이겸        |     |
 |-------------------------|------------|-----|
-| <center>촬영              | 김이겸        | 이주원 |
-| <center>발표              | 최지완        |     |
-| <center>코드의 마법사         | 최지완        | 최현우 |
-| <center>주제선정            | 최현우        |     |
-| <center>디자인/미술          | <center>이강 |     |
-| <center>홍보              | <center>이강 |     |
-| <center>special thankts | 이건우        |     |
+| <center>촬영</center>     | 김이겸        | 이주원 |
+| <center>발표</center>              | 최지완        |     |
+| <center>코드의 마법사</center>         | 최지완        | 최현우 |
+| <center>주제선정</center>            | 최현우        |     |
+| <center>디자인/미술</center>          | <center>이강</center> |     |
+| <center>홍보</center>              | <center>이강</center> |     |
+| <center>special thankts</center> | 이건우        |     |

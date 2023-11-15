@@ -13,9 +13,8 @@ def get_polygon_gravity(nth_arr: np.ndarray):
         return get_triangle_gravity(nth_arr)
     else:
         points_arr = sort_counterclockwise(nth_arr)
-        points_arr = nth_arr
 
-        x_1, y_1 = get_triangle_gravity(points_arr[0:3])
+        x_1, y_1 =  get_triangle_gravity(points_arr[0:3])
         x_2, y_2 = get_polygon_gravity(np.delete(points_arr, 1, axis=0))
         # 두 점 지나는 직선(일차방정식)
         solution_1 = np.array([y_2 - y_1, x_1 - x_2, y_2 * x_1 - x_2 * y_1])

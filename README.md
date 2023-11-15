@@ -43,12 +43,12 @@
 - - -
 #### _Credit_
 
-| 기획/연출                   | 김이겸               |     |
-|-------------------------|-------------------|-----|
-| <div allign="center">촬영</div>     | 김이겸               | 이주원 |
-| <div allign="center">발표</div>              | 최지완               |     |
-| <div allign="center">코드의 마법사</div>         | 최지완               | 최현우 |
-| <div allign="center">주제선정</div>            | 최현우               |     |
-| <div allign="center">디자인/미술</div>          | <div allign="center">이강</div> |     |
-| <div allign="center">홍보</div>              | <div allign="center">이강</div> |     |
-| <div allign="center">special thankts</div> | 이건우               |     |
+| 기획/연출           | 김이겸 |     |
+|-----------------|-----|-----|
+| 촬영              | 김이겸 | 이주원 |
+| 발표              | 최지완 |     |
+| 코드의 마법사         | 최지완 | 최현우 |
+| 주제선정            | 최현우 |     |
+| 디자인/미술          | 이강  |     |
+| 홍보              | 이강  |     |
+| special thankts | 이건우 |     |
